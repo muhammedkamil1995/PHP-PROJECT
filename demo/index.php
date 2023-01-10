@@ -1,6 +1,4 @@
 <?php
 
-    $heading = 'KAMZEE STORE';
-
-    require "LinkPage/index.learn.php";
-    
+require 'function.php';
+require 'router.php';
