@@ -1,5 +1,8 @@
 <?php
 
-$heading = 'KAMZEE STORE';
 
-require "LinkPage/index.learn.php";
+
+view("LinkPage/index.learn.php", [
+    'heading' => 'Home',
+]);
+

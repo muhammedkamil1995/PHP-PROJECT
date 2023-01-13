@@ -1,5 +1,7 @@
 <?php
 
-$heading = 'About us';
+view("LinkPage/about.learn.php", [
+    'heading' => 'Contact Us',
+]);
 
-require "LinkPage/about.learn.php";
+
