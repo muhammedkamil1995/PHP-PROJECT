@@ -1,7 +1,11 @@
 <?php
 
-use core\Validator;
-use core\Database;
+use Core\App;
+use Core\Validator;
+use Core\Database;
+
+$db = App::resolve(Database::class);
+$errors = [];
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -13,7 +17,7 @@ if (! Validator::string($_POST['body'], 1, 1000)) {
 }
 
 if (! empty($errors)) {
-    return view("notes/create.view.php", [
+    return view("notes/create.LinkPage.php", [
         'heading' => 'Create Note',
         'errors' => $errors
     ]);
@@ -26,4 +30,3 @@ $db->query('INSERT INTO note(body, user_id) VALUES(:body, :user_id)', [
 
 header('location: /notes');
 die();
-
